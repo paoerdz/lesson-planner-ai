@@ -18,11 +18,11 @@ form.addEventListener("submit", async (e) => {
   saveBtn.disabled = true;
 
   try {
-    const resp = await fetch("/api/generate-lesson", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ grade, subject, objective })
-    });
+    const resp = await fetch("https://lesson-planner-api.vercel.app/api/generate-lesson", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ grade, subject, objective })
+  });
 
     if (!resp.ok) {
       const err = await resp.json().catch(() => ({}));
