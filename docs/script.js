@@ -17,8 +17,7 @@ form.addEventListener("submit", async (e) => {
   outputArea.innerHTML = "<em>Generating lesson plan…</em>";
   saveBtn.disabled = true;
 
-  try {
-    const resp = await fetch("https://lesson-planner-api.vercel.app/api/generate-lesson", {
+  fetch("https://lesson-planner-api.vercel.app/api/generate-lesson", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ grade, subject, objective })
